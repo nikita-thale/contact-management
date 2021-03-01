@@ -1,0 +1,30 @@
+<div class="main-container">
+  <nav class="navbar navbar-light bg-light search-header">
+    <!-- <form class="form-inline" (ngSubmit)="onSearchSubmit(keysearch)">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px;" 
+      [(ngModel)]="keysearch"/>
+      <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit" (click)="onSearchSubmit(keysearch)">Search</button>
+    </form> -->
+    <button class="btn btn-outline-success my-2 my-sm-0 search-btn" (click)="open(undefined,users)">Add New</button>
+  </nav>
+  <section>
+    <div class="container-fluid list-content">
+      <div class="row list-row" *ngFor="let list of users ; index as i" [ngClass]="{'delete-user': list?.status === false}">
+        <div class="col-md-2">
+          <div class="img-section">
+            <img [src]="list?.avatar" style="height: 76px;"/>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h4>{{list?.first_name}}&nbsp;{{list?.last_name}}</h4>
+          <p>{{list?.email}}</p>
+          <p>{{list?.phone}}</p>
+        </div>
+        <div class="col-md-4 action-icons">
+          <img src="../../assets/images/edit-pencil.svg" style="margin-right: 2em;" (click)="open(list)">
+          <img src="../../assets/images/remove-cross.svg" style="margin-right: 2em;" (click)="openConfirmationDialog(i)">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

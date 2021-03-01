@@ -1,0 +1,62 @@
+.main-container {
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #979797;
+    background-color: rgba(216, 216, 216, 0.2);
+}
+
+.search-header {
+    background-color: #E6EEF4;
+}
+
+.search-header .search-btn {
+    color: #FFFFFF;
+    border-radius: 5px;
+    background-color: #4081AD;
+}
+
+.list-content .img-section {
+    box-sizing: border-box;
+    height: 78px;
+    width: 78px;
+    border: 1px solid #9FA2A8;
+    border-radius: 2px;
+}
+
+.list-content h4 {
+    color: rgba(5, 39, 62, 0.7);
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.list-content p {
+    color: rgba(5, 39, 62, 0.7);
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 8px;
+}
+
+.list-content .list-row {
+    box-sizing: border-box;
+    border: 2px solid #8FDA39;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 11px -7px 15px -3px rgba(64, 129, 173, 0.23);
+    padding: 12px;
+    margin: 10px 2px;
+}
+
+.action-icons {
+    display: flex;
+    align-items: center;
+}
+
+.delete-user {
+    border: 2px solid rgb(228, 6, 6)!important;
+    background-color: #979797!important;
+    pointer-events: none;
+}

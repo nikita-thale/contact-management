@@ -1,0 +1,63 @@
+<div class="modal-header">
+  <h4 class="modal-title">Hi there!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="card lesson-border">
+    <!-- <img *ngIf="user.avatar" class="card-img-top" src="{{user.avatar}}" alt="Card image cap"> -->
+    <div class="card-body">
+      <!-- <p class="card-text"><b>First Name: </b>{{user?.first_name}}</p>
+			<p class="card-text"><b>Last Name: </b>{{user?.last_name}}</p>
+			<p class="card-title"><b>Email: </b>{{user?.email}}</p>
+			<p class="card-text"><b>Phone: </b>{{user?.phone}}</p> -->
+      <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit(); activeModal.dismiss('Cross click')">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" formControlName="firstName"
+            [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required  
+            [(ngModel)]="user.first_name"/>
+          <div class="invalid-feedback">
+            <div>First Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName"
+            [ngClass]="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" required  
+            [(ngModel)]="user.last_name"/>
+          <div class="invalid-feedback">
+            <div>Last Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" formControlName="email"
+            [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}"  
+            [(ngModel)]="user.email"/>
+          <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('email').errors.required">Email Name is required</div>
+            <div *ngIf="form.get('email').errors.email">Email must be a valid email Address</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" formControlName="phone"
+            [ngClass]="{'is-invalid':form.get('phone').touched && form.get('phone').invalid}" 
+            [(ngModel)]="user.phone"/>
+          <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('phone').errors.required">Phone Name is required</div>
+            <div *ngIf="form.get('phone').errors.phone">Phone must be a valid</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" [disabled]="!form.valid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
